@@ -55,7 +55,7 @@ export default function Home() {
           place with ease
         </h1>
         <div className='text-gray-400 text-sm sm:text-xl'>
-          <span className='text-red-300'>Asiyana </span>
+          <span className='text-red-700 text-xl'>Apnaasiyana </span>
           is the best place to find your next perfect place to
           live.
           <br />

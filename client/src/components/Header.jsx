@@ -2,6 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { HiHomeModern } from "react-icons/hi2";
 
 export const Header = () => {
 
@@ -28,9 +29,11 @@ export const Header = () => {
     <header className='bg-slate-200 shadow-md'>
         <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
             <Link to= '/' >
-            <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-                <span className='text-slate-500'>Apna-</span>
+            <h1 className='font-bold text-xl sm:text-2xl flex flex-wrap'>
+                <span className='flex m-1 text-blue-400 items-center'><HiHomeModern /></span>
+                <span className='text-slate-500'>Apna</span>
                 <span className='text-slate-700'>asiyana</span>
+                <span className='text-red-600'>.com</span>
             </h1>
             </Link>
             <form
@@ -48,7 +51,7 @@ export const Header = () => {
                 <FaSearch className='text-slate-600' />
             </button>
             </form>
-            <ul className='flex gap-4'>
+            <ul className='flex gap-4 font-semibold text-sm sm:text-xl'>
                 <Link to='/'>
                     <li className='hidden sm:inline text-slate-700 hover:underline'>Home</li>
                 </Link>
@@ -60,7 +63,7 @@ export const Header = () => {
                 <Link to='/profile'>
                     {currentUser ? (
                     <img
-                        className='rounded-full h-7 w-7 object-cover'
+                        className='rounded-full h-8 w-8 object-cover '
                         src={currentUser.avatar}
                         alt='profile'
                     />
