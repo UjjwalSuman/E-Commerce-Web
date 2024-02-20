@@ -3,9 +3,10 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiHomeModern } from 'react-icons/hi2'
 import { IoMdPerson } from "react-icons/io";
 import { FaSquareTwitter } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
-  return (
+    return (
     <footer className="bg-white dark:bg-gray-900">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
@@ -17,7 +18,23 @@ export const Footer = () => {
                 <span className='text-red-600'>.com</span>
             </h1>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Pages</h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                    <div >
+                        <Link to='/' >
+                            <li className='hover:underline mb-4'>Home</li>
+                        </Link>
+                        <Link to='/about'>
+                            <li className='hover:underline mb-4'>About</li>
+                        </Link>
+                        <Link to='/contact-us'>
+                            <li className='hover:underline mb-4'>Contact us</li>
+                        </Link>
+                    </div>
+                  </ul>
+              </div>
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
