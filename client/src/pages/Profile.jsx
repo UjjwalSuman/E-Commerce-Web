@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import {
   getDownloadURL,
   getStorage,
@@ -32,6 +33,7 @@ export const Profile = () => {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  const [showPassword, setShowPassword] = useState(false)
   
   useEffect(() => {
     if (file) {
@@ -207,13 +209,33 @@ export const Profile = () => {
           className='border p-3 rounded-lg'
           onChange={handleChange}
         />
-        <input
+        <label className='relative'>
+          <input
+            required
+            type={showPassword ? "text" : "password"}
+            placeholder='password'
+            id='password'
+            onChange={handleChange}
+            className="w-full rounded-[0.5rem] p-[12px] pr-10 text-richblack-5"
+          />
+          <span
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute right-3 top-[14px] z-[10] cursor-pointer"
+            >
+              {showPassword ? (
+                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+              ) : (
+                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+              )}
+          </span>
+        </label>
+        {/* <input
           type='password'
           placeholder='password'
           onChange={handleChange}
           id='password'
           className='border p-3 rounded-lg'
-        />
+        /> */}
         <button
           disabled={loading}
           className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
