@@ -42,7 +42,7 @@ export const Header = () => {
             >
             <input
                 type='text'
-                placeholder='Search...'
+                placeholder='Search Your City...'
                 className='bg-transparent focus:outline-none w-24 sm:w-64'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -51,13 +51,17 @@ export const Header = () => {
                 <FaSearch className='text-slate-600' />
             </button>
             </form>
-            <ul className='flex gap-4 font-semibold text-sm sm:text-xl'>
+            <ul className='flex gap-8 font-semibold text-sm sm:text-xl'>
                 <Link to='/'>
                     <li className='hidden sm:inline text-slate-700 hover:underline'>Home</li>
                 </Link>
 
                 <Link to='/about'>
                     <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
+                </Link>
+
+                <Link to='/contact-us'>
+                    <li className='hidden sm:inline text-slate-700 hover:underline'>Contact us</li>
                 </Link>
                 
                 <Link to='/profile'>

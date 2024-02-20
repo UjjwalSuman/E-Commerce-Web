@@ -134,9 +134,8 @@ export const Profile = () => {
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
-        return;
+        return
       }
-
       setUserListings(data);
     } catch (error) {
       setShowListingsError(true);
@@ -245,8 +244,8 @@ export const Profile = () => {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
-        Show Listings
+      <button onClick={handleShowListings} className='text-green-700 w-full text-xl'>
+        Show your properties
       </button>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
@@ -255,35 +254,38 @@ export const Profile = () => {
       {userListings &&
         userListings.length > 0 &&
         <div className="flex flex-col gap-4">
-          <h1 className='text-center mt-7 text-2xl font-semibold'>Your Listings</h1>
+          <h1 className='text-center mt-7 text-2xl font-semibold'>Your Properties</h1>
           {userListings.map((listing) => (
             <div
               key={listing._id}
-              className='border rounded-lg p-3 flex justify-between items-center gap-4'
+              className='border rounded-lg p-3 grid grid-cols-3 divide-x justify-between items-center gap-4 shadow-md hover:shadow-black/30 transition duration-300 ease-in-out'
             >
               <Link to={`/listing/${listing._id}`}>
                 <img
                   src={listing.imageUrls[0]}
                   alt='listing cover'
-                  className='h-16 w-16 object-contain'
+                  className=' object-contain h-auto max-w-full rounded-lg'
                 />
               </Link>
               <Link
-                className='text-slate-700 font-semibold  hover:underline truncate flex-1'
+                className='text-slate-700 font-semibold text-lg  hover:underline truncate flex-1'
                 to={`/listing/${listing._id}`}
               >
                 <p>{listing.name}</p>
               </Link>
 
-              <div className='flex flex-col item-center'>
+              <div className='flex flex-col item-center gap-2'>
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className='text-red-700 uppercase'
+                  className='text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-md text-sm px-8 py-2 text-center me-2 mb-2'
                 >
                   Delete
                 </button>
                 <Link to={`/update-listing/${listing._id}`}>
-                  <button className='text-green-700 uppercase'>Edit</button>
+                  <button 
+                    className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-md text-sm px-14 py-2 text-center me-2 mb-2'
+                    >
+                    Edit</button>
                 </Link>
               </div>
             </div>

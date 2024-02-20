@@ -20,6 +20,8 @@ export default function CreateListing() {
         description: '',
         address: '',
         type: 'rent',
+        carpetarea: '600',
+        selectedFlatType: '1',
         bedrooms: 1,
         bathrooms: 1,
         regularPrice: 50,
@@ -164,14 +166,14 @@ export default function CreateListing() {
         <div className='flex flex-col gap-4 flex-1'>
           <input
             type='text'
-            placeholder='Name'
+            placeholder='City'
             className='border p-3 rounded-lg'
             id='name'
-            maxLength='62'
-            minLength='10'
+            maxLength='20'
+            minLength='4'
             required
             onChange={handleChange}
-            value={formData.name}
+            value={formData.city}
           />
           <textarea
             type='text'
@@ -191,7 +193,7 @@ export default function CreateListing() {
             onChange={handleChange}
             value={formData.address}
           />
-          <div className='flex gap-6 flex-wrap'>
+          <div className='flex gap-6 flex-wrap mt-4'>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -237,7 +239,39 @@ export default function CreateListing() {
               <span>Offer</span>
             </div>
           </div>
-          <div className='flex flex-wrap gap-6'>
+          <div className='flex flex-wrap gap-6 mt-4'>
+            <div className='flex items-center gap-2'>
+              <input
+                type='number'
+                id='selectedFlatType'
+                min='1'
+                max='5'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.selectedFlatType}
+              />
+              <div className='flex flex-col items-center'>
+                <p>Flat type</p>
+                <span className='text-xs'>(BHK)</span>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <input
+                type='number'
+                id='carpetarea'
+                min='400'
+                max='10000'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.carpetarea}
+              />
+              <div className='flex flex-col items-center'>
+                <p>Build up area</p>
+                <span className='text-xs'>(sqft)</span>
+              </div>
+            </div>
             <div className='flex items-center gap-2'>
               <input
                 type='number'

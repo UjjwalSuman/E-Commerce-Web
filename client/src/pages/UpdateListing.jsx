@@ -21,6 +21,8 @@ export default function CreateListing() {
     description: '',
     address: '',
     type: 'rent',
+    carpetarea: '600',
+    selectedFlatType: 1,
     bedrooms: 1,
     bathrooms: 1,
     regularPrice: 50,
@@ -130,6 +132,8 @@ export default function CreateListing() {
 
     if (
       e.target.type === 'number' ||
+      e.target.type === 'number' ||
+      e.target.type === 'number' ||
       e.target.type === 'text' ||
       e.target.type === 'textarea'
     ) {
@@ -179,7 +183,7 @@ export default function CreateListing() {
         <div className='flex flex-col gap-4 flex-1'>
           <input
             type='text'
-            placeholder='Name'
+            placeholder='City'
             className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
@@ -262,6 +266,38 @@ export default function CreateListing() {
             <div className='flex items-center gap-2'>
               <input
                 type='number'
+                id='selectedFlatType'
+                min='1'
+                max='5'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.selectedFlatType}
+              />
+              <div className='flex flex-col items-center'>
+                <p>Flat type</p>
+                <span className='text-xs'>(BHK)</span>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <input
+                type='number'
+                id='carpetarea'
+                min='400'
+                max='10000'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.carpetarea}
+              />
+              <div className='flex flex-col items-center'>
+                <p>Build up area</p>
+                <span className='text-xs'>(sqft)</span>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <input
+                type='number'
                 id='bedrooms'
                 min='1'
                 max='10'
@@ -299,7 +335,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(Rs / month)</span>
                 )}
               </div>
             </div>
@@ -318,7 +354,7 @@ export default function CreateListing() {
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(Rs / month)</span>
                   )}
                 </div>
               </div>

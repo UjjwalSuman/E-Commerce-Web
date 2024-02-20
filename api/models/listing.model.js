@@ -46,6 +46,14 @@ const listingSchema = new mongoose.Schema(
         type: Boolean,
         required: true,
       },
+      selectedFlatType: {
+        type: Number,
+        required: true,
+      },
+      carpetarea: {
+        type: Number,
+        required: true,
+      },
       imageUrls: {
         type: Array,
         required: true,
