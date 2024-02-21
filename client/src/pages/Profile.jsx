@@ -229,13 +229,6 @@ export const Profile = () => {
               )}
           </span>
         </label>
-        {/* <input
-          type='password'
-          placeholder='password'
-          onChange={handleChange}
-          id='password'
-          className='border p-3 rounded-lg'
-        /> */}
         <button
           disabled={loading}
           className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
@@ -299,15 +292,16 @@ export const Profile = () => {
               <div className='flex flex-col item-center gap-2'>
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className='text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-md text-sm px-8 py-2 text-center me-2 mb-2'
+                  className='text-red-600 uppercase hover:underline'
                 >
                   Delete
                 </button>
                 <Link to={`/update-listing/${listing._id}`}>
                   <button 
-                    className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-md text-sm px-14 py-2 text-center me-2 mb-2'
+                    className='text-green-700 uppercase ml-12 hover:underline'
                     >
-                    Edit</button>
+                    Edit
+                  </button>
                 </Link>
               </div>
             </div>

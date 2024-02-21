@@ -52,14 +52,14 @@ export const SignUp = () => {
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='text'
-          placeholder='username'
+          placeholder='Enter your username'
           className='border p-3 rounded-lg'
           id='username'
           onChange={handleChange}
         />
         <input
           type='email'
-          placeholder='email'
+          placeholder='Enter your email'
           className='border p-3 rounded-lg'
           id='email'
           onChange={handleChange}
@@ -68,7 +68,7 @@ export const SignUp = () => {
           <input
             required
             type={showPassword ? "text" : "password"}
-            placeholder='password'
+            placeholder='Enter your password'
             id='password'
             onChange={handleChange}
             className="w-full rounded-[0.5rem] p-[12px] pr-10 text-richblack-5"

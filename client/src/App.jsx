@@ -14,8 +14,6 @@ import Search from './pages/Search';
 import Home from './pages/Home'
 import { Footer } from './components/Footer'
 
-
-
 const App = () => {
   return (
     <BrowserRouter>
