@@ -46,7 +46,7 @@ export const Header = () => {
                         <span className='flex m-1 text-blue-400 items-center'><HiHomeModern /></span>
                         <span className='text-slate-500'>Apna</span>
                         <span className='text-slate-700'>asiyana</span>
-                        <span className='text-red-600 hidden sm:inline'>.com</span>
+                        <span className='text-red-600'>.com</span>                    
                     </h1>
                 </Link>
                 <form
@@ -54,12 +54,12 @@ export const Header = () => {
                     className='bg-slate-100 p-3 rounded-lg flex items-center'
                 >
                     <input
-                        type='text'
-                        placeholder={isMobile ? 'City' : 'Search Your City...'}
-                        className={`bg-transparent focus:outline-none w-24 sm:w-64 ${isMobile ? 'text-sm' : ''}`}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
+                    type='text'
+                    placeholder={isMobile ? 'City' : 'Search Your City...'}
+                    className={`bg-transparent focus:outline-none w-24 sm:w-64 ${isMobile ? 'text-sm' : ''}`}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
 
                     <button>
                         <FaSearch className='text-slate-600' />
